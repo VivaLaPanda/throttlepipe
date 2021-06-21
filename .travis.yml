@@ -1,0 +1,14 @@
+language: go
+
+go:
+ - master
+
+install:
+  # Install all external dependencies, ensuring they are updated.
+  - go get -u -v $(go list -f '{{join .Imports "\n"}}{{"\n"}}{{join .TestImports "\n"}}' ./... | sort | uniq | grep -v golang-samples)
+
+script:
+ - go test -race -coverprofile=coverage.txt -covermode=atomic ./...
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)

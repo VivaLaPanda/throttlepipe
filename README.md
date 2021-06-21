@@ -1,0 +1,3 @@
+# throttlepipe [![](https://godoc.org/github.com/VivaLaPanda/rearview?status.svg)](http://godoc.org/github.com/VivaLaPanda/throttlepipe) [![Build Status](https://travis-ci.org/VivaLaPanda/throttlepipe.svg?branch=master)](https://travis-ci.org/VivaLaPanda/throttlepipe) [![codecov](https://codecov.io/gh/VivaLaPanda/throttlepipe/branch/master/graph/badge.svg)](https://codecov.io/gh/VivaLaPanda/throttlepipe)
+
+Small command line utility to throttle data being passed through CLI pipes.

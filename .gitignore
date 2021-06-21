@@ -11,9 +11,7 @@ uta-stream
 coverage.txt
 
 # Stuff used for testing, these will be generated on running tests
-test_song.mp3
-**/TEMP-DL
-*.db
+*.tmp
 debug
 
 # Output of the go coverage tool, specifically when used with LiteIDE

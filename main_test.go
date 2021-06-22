@@ -52,8 +52,11 @@ func TestPipefile(t *testing.T) {
 		return
 	}
 
-	if lastTime.String() != testTime.Format("2006-01-02 15:04:05.9999999 -0700 MST") {
-		t.Errorf("testPipefile failed because r/w didn't match: %s != %s", lastTime.String(), testTime.Format("2006-01-02 15:04:05.9999999 -0700 MST"))
+	if lastTime.Format("2006-01-02 15:04:05.9999999 -0700 MST") != testTime.Format("2006-01-02 15:04:05.9999999 -0700 MST") {
+		t.Errorf(
+			"testPipefile failed because r/w didn't match: %s != %s",
+			lastTime.Format("2006-01-02 15:04:05.9999999 -0700 MST"),
+			testTime.Format("2006-01-02 15:04:05.9999999 -0700 MST"))
 	}
 }
 

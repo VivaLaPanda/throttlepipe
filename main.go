@@ -80,6 +80,8 @@ func doPipe(w io.Writer, r io.Reader) error {
 }
 
 func main() {
+	flag.Parse()
+
 	pipefilename := filepath.Join(*tmpPath, "throttlepipe-"+*id)
 	lastTime, err := initPipefile(pipefilename)
 	if err != nil {
@@ -91,7 +93,7 @@ func main() {
 	stdoutWriter := bufio.NewWriter(os.Stdout)
 
 	// Check our checkpoint
-	if time.Since(lastTime) > (time.Duration(*sleepTime) * time.Minute) {
+	if time.Since(lastTime) < (time.Duration(*sleepTime) * time.Minute) {
 		// It has been less than sleepTimeDuration since last checkpoint
 		// Just terminate for now
 
